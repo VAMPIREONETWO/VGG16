@@ -17,12 +17,12 @@ class MyVGG16(Model):
             classes=10,
             input_shape=input_shape,
             pooling=pooling
-        )]
+        ).layers]
 
         # full connection layers
         self.fc1 = FC(fc1)
         self.fc2 = FC(fc2)
-        self.fc3 = layers.Dense(classes)
+        self.fc3 = layers.Dense(classes, activation="softmax")
 
     def call(self, inputs, training=None, mask=None):
         outputs = self.ls[0](inputs)
