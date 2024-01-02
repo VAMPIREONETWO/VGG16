@@ -12,7 +12,7 @@ class MyVGG16(Model):
         self.ls = [layer for layer in tf.keras.applications.vgg16.VGG16(
             weights='imagenet',
             include_top=False,
-            classes=10,
+            classes=classes,
             input_shape=input_shape,
             pooling=pooling
         ).layers]
