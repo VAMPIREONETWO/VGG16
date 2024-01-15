@@ -8,7 +8,7 @@ class MyVGG16(Model):
                  fc1: int = 4096, fc2: int = 4096, dp1=0, dp2=0):
         super().__init__()
 
-        self.i = Input(shape=input_shape)
+        self.i = Input(shape=input_shape)  # used ro reveal output shape
 
         # extract VGG16 layers
         self.ls = [layer for layer in VGG16(
