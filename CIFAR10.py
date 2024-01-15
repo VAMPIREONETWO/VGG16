@@ -23,7 +23,7 @@ x_train = x_train / 255
 x_test = x_test / 255
 
 # model construction
-model = MyVGG16(10,fc1=256,fc2=128,dp1=0,dp2=0,input_shape=(32, 32, 3))
+model = MyVGG16(10,fc1=256,fc2=128,dp1=0.2,dp2=0.2,input_shape=(32, 32, 3))
 model.build((None,32,32,3))
 model.compile(optimizer=keras.optimizers.Adam(learning_rate=0.001),
               loss=keras.losses.SparseCategoricalCrossentropy(),
